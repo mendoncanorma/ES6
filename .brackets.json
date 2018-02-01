@@ -1,0 +1,21 @@
+{
+    "language": {
+        "javascript": {
+            "linting.prefer": [
+                "ESLint",
+                "JSHint"
+            ],
+            "linting.usePreferredOnly": true
+        }
+    },
+    "brackets-eslint.gutterMarks": true,
+    "brackets-eslint.useLocalESLint": true,
+    "jshint.options": {
+        "devel": true,
+        "undef": false,
+        "esversion": 6
+    },
+    "jslint.options": {
+        "devel": true
+    }
+}
