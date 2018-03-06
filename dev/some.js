@@ -22,10 +22,24 @@ for (var i=0; i<computers.length; i++) {
 console.log("All Computers Can Run Program : ", allComputersCanRunProgram);
 console.log("Only Some Computers Can Run Program : ", onlySomeComputersCanRunProgram);
 
-console.log("---------------------------------");
+console.log("---------------------------------------------------");
 
 allComputersCanRunProgram = computers.some(function (computer) {
   return computer.ram > 16;
 });
 
 console.log("All Computers Can Run Program : ", allComputersCanRunProgram);
+
+console.log("---------------------------------------------------");
+
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress = requests.some(function (request) {
+  return request.status === 'complete';
+});
+
+console.log(inProgress);
