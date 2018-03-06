@@ -19,9 +19,14 @@ module.exports = {
       "destructuring": "any",
       "ignoreReadBeforeAssign": false
     }],
-    "padded-blocks": "error",
+    "padded-blocks": "off",
     "eol-last": "error",
     "no-magic-numbers": ["error", { "enforceConst": true, "ignore": [1,2,3,4,5,6,7,8,9,10] }],
-    "array-element-newline": ["error", "never"]
+    "array-element-newline": ["error", "never"],
+    "linebreak-style": "off",
+    "prefer-arrow-callback": "off",
+    "func-names": "off",
+    "object-property-newline": "off",
+    "array-element-newline": "off"
   }
 };
