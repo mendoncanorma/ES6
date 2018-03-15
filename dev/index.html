@@ -7,7 +7,13 @@
 <body>
 
 <video id="video" width="320" height="240" autoplay></video>
+<br /><br />
 <button id="snap">Snap Photo</button>
+<br /><br />
+<button id="stop">Stop Streaming</button>
+<br /><br />
+<button id="start">Start Streaming</button>
+<br /><br />
 <canvas id="canvas" width="320" height="240"></canvas>
 
 <script>
@@ -17,14 +23,18 @@
   // Elements for taking the snapshot
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
+  
+  var localStream;
 
 
   // Get access to the camera!
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // Not adding `{ audio: true }` since we only want video now
     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-      video.src = window.URL.createObjectURL(stream);
+      video.src = window.URL.createObjectURL(stream);      
       video.play();
+      
+      localStream = stream;
     });
   }
 
@@ -32,7 +42,24 @@
   document.getElementById("snap").addEventListener("click", function() {
     context.drawImage(video, 0, 0, 320, 240);
   });
+  
+  // Trigger stop camera
+  document.getElementById("stop").addEventListener("click", function() {
+    localStream.getTracks()[0].stop();
+  });  
 
+
+  // Trigger stop camera
+  document.getElementById("start").addEventListener("click", function() {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+      video.src = window.URL.createObjectURL(stream);      
+      video.play();
+      
+      localStream = stream;
+    });
+  });  
+  
 </script>
 
 </body>

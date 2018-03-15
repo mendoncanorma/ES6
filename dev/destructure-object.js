@@ -29,3 +29,9 @@ var {d: day, m: month, y: year } = currentDate();
 
 console.log( d, m, y );
 console.log( day, month, year );
+
+console.log("---------------------------------------------------");
+
+let course = {name: "name", publisher: "publisher"};
+let {name, publisher, price} = course;
+console.log(name, publisher, price);

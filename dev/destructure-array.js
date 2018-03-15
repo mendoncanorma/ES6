@@ -50,4 +50,10 @@ console.log(double([1, 2, 3]));
 console.log("-----------------------------------------------------------------");
 
 
+const numbers_nested = [1, 2, [3, 4, 5]];
+
+var [first_n, second_n, [third_n, fourth_n, fifth_n]] = numbers_nested;
+
+console.log(first_n, second_n, third_n, fourth_n, fifth_n);
+
 console.log("-----------------------------------------------------------------");
